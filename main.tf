@@ -5,7 +5,7 @@ provider "aws" {
 resource "aws_instance" "one" {
   count                  = 3
   ami                    = "ami-02b8269d5e85954ef"
-  instance_type          = "t3.medium"
+  instance_type          = "t3.small"
   key_name               = "SSS"
   vpc_security_group_ids = ["sg-027bb845ecfe37fa7"]
   tags = {
@@ -14,5 +14,5 @@ resource "aws_instance" "one" {
 }
 
 variable "instance_names" {
-  default = ["jenkins", "tomcat-1", "Monitoring server"]
+  default = ["jenkins","tomcat-1","Monitoring server"]
 }
